@@ -1,0 +1,539 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="shortcut icon" href="/Pagina_Cbt/favicon-96x96.png">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    :root {
+      --primario: #121768;
+      --secundario: #3da772;
+      --terciario: #2e6f47;
+      --fondo: #bebebe;
+      --bacground2:rgb(81, 102, 221);
+      --background_color: rgb(135, 152, 155);
+      --white:rgb(250,250,250);
+      --blue:rgb(29, 34, 105);
+      --aquamarine:rgb(24, 141, 83);
+      --gold:rgb(139, 137, 16);
+      --green:rgb(29, 95, 23);
+      --blue_grey: rgba(97, 92, 158, 0.836);
+      --blue_grey2: rgba(70, 65, 128, 0.836);
+      --blue_grey3:rgba(51, 46, 97, 0.836);
+    }
+    *{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: var(--background_color);
+      font-family: "Raleway", sans-serif;
+    }
+
+    h1 {
+      color: white;
+      font-family: "Ancizar Serif", serif; 
+      font-size: 2rem;
+      margin-left: 10px;
+      text-shadow: 0 1px #b7b7b7, 0 2px 
+     #b7b7b7, 0 3px #b7b7b7, 0 4px #b7b7b7, 0 5px #b7b7b7, 0 6px transparent, 0 7px transparent,
+     0 8px transparent, 0 9px transparent, 0 10px 10px rgba(0,0,0.5)
+    }
+
+    a{
+     text-decoration: none;
+    }
+
+    span{
+     position: relative;
+     top: 20px;
+     display: inline-block;
+     font-size: 8rem;
+     text-shadow: 0 1px #b7b7b7, 0 2px 
+     #b7b7b7, 0 3px #b7b7b7, 0 4px #b7b7b7, 0 5px #b7b7b7, 0 6px transparent, 0 7px transparent,
+     0 8px transparent, 0 9px transparent, 0 10px 10px rgba(0,0,0.5);
+     animation: bounce 2s ease infinite alternate;
+    }
+
+    h1 span:nth-child(2){
+     animation-delay: 0.1s;
+    }
+
+    h1 span:nth-child(3){
+     animation-delay: 0.2s;
+    }
+
+    h1 span:nth-child(4){
+     animation-delay: 0.3s;
+    }
+
+    h1 span:nth-child(5){
+     animation-delay: 0.4s;
+    }
+
+    h1 span:nth-child(6){
+     animation-delay: 0.5s;
+    }
+
+    h1 span:nth-child(7){
+     animation-delay: 0.6s;
+    }
+
+    h1 span:nth-child(8){
+     animation-delay: 0.7s;
+    }
+
+    h1 span:nth-child(9){
+     animation-delay: 0.8s;
+    }
+
+    h1 span:nth-child(10){
+     animation-delay: 0.9s;
+    }
+
+    h1 span:nth-child(11){
+     animation-delay: 1s;
+    }
+
+
+    @keyframes bounce{
+     100%{
+        top: -20px;
+        text-shadow: 0 1px #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc,
+        0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc 0 60px 30px rgba(0,0,0,0.3);
+      }
+    }
+
+    .menu{
+     background: linear-gradient(to right, #121668ad,#3da772ad);
+     width: 500 px;
+     height: 50px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: self-start;
+     display: flex; 
+     align-items: center;
+    }
+
+    .Piedepagina{
+     width: 100%;
+     background: linear-gradient(to right, #14006b94, #00526b94);
+    }
+
+    .Piedepagina .grupo1{
+     width: 100%;
+     max-width: 1200px;
+     margin: auto;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-gap: 50px;
+     padding: 45px 0px;
+    }
+
+    .Piedepagina .grupo1 .box figure{
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+
+    .Piedepagina .grupo1 .box figure img{
+     width: 250px;
+     height: 250px;
+    }
+
+    .Piedepagina .grupo1 .box h2{
+     color: white;
+     margin-bottom: 25px;
+     font-size: 50px;
+     font-family: "Playfair Display", serif;
+    }
+
+    .Piedepagina .grupo1 .redsocial a{
+     display: flex;
+     flex-direction: column;
+     text-decoration: none;
+     width: 45px;
+     height: 45px;
+     line-height: 50px;
+     color: #ffffff;
+     margin-right: 10px;
+     background: linear-gradient(to right, #0f005094, #00354694);
+     text-align: center;
+     justify-content: center;
+     align-items: center;
+     transition: all 300ms ease;
+     cursor: pointer;
+    }
+
+    .Piedepagina .grupo1 .redsocial a:hover{
+     color: #121768;
+    }
+
+    .Piedepagina .grupo2{
+     background: linear-gradient(to right, #170a4e94, #0a2f4e94);
+     padding: 15px 10px;
+     text-align: center;
+     color: white;
+    }
+
+    .Piedepagina .grupo2 small{
+     font-size: 15px;
+    }
+
+    @media screen and (max-width: 800px){
+      .Piedepagina .grupo1{
+     width: 90%;
+     grid-template-columns: repeat(1, 1fr);
+     grid-gap: 30px;
+     padding: 35px 0px;
+    }
+    }
+
+    button {
+      background-color: var(--terciario);
+      color: white;
+      font-size: 1rem;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: var(--secundario);
+      transform: scale(1.05);
+    }
+
+    .boton__sections
+    {
+      background-color: var(--white);
+      display: flex;
+      justify-content: center;
+      padding: 50px 0;
+    }
+
+    .Botones__cards{
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+    }
+
+    .Boton__card-info{
+     max-width: 900px;
+    }
+
+    .Boton__card-info h1{
+     font-size: 2rem;
+     font-weight: 900;
+     color: var(--blue);
+     margin-bottom: 1rem;
+     text-shadow: none;
+     font-family: "Playfair Display", serif;
+    }
+
+    .Boton__card-info p{
+     font-size: 1.1rem;
+     color: black;
+     margin-bottom: 1rem;
+     font-family: "Nunito", sans-serif;
+    }
+
+    .Boton__card-card{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 20px;
+    }
+
+    .Boton__card{
+       max-width: 25%;
+       border: solid 1px var(--aquamarine);
+       margin: 3rem 1rem;
+       padding: 2rem 1rem;
+       border-radius: 5px;
+       background-color: rgba(69, 64, 88, 0.3);
+       transition: .5s, color .10s;
+       -webkit-transition: .5s, color .10s;
+       -moz-transition: .5s, color .10s;
+       cursor: pointer;
+    }
+
+    .Boton__card i{
+     font-size: 56px;
+     color: var(--gold);
+    }
+
+    .Boton__card h2{
+     font-size: 1.5rem;
+     font-weight: 700;
+     color: var(--blue);
+     font-family: "Playfair Display", serif;
+    }
+
+    .Boton__card p{
+     font-size: 1.1rem;
+     color:black;
+     margin-top: 0.5rem;
+     font-family: "Noto Sans", sans-serif;
+    }
+
+    .Boton__card:hover{
+     box-shadow: 0 8px 8px 0 #000000,0 8px 8px 0 #000000;
+     transform: translate(0px,5px);
+     -webkit-transform: translate(0px,5px);
+     -moz-transform:translate(0px,5px);
+
+    }
+
+    .container{
+     max-width: 1440px;
+     padding: 0 20px;
+    }
+
+    @media only screen and (max-width: 850px){
+     .Boton__card-card{
+       flex-direction: column;
+       align-items: center;
+       max-width: 500px;
+      }
+      .Boton__card{
+       max-width: 100%;
+       margin: 1rem;
+      }
+      .Botones__cards .boton_more{
+       margin-top: 2rem;
+
+      }
+    }
+
+    .boton_more{
+     font-size: 1.1rem;
+     font-weight: 700;
+     padding: 10px 20px;
+     border-radius: 5px;
+    }
+
+    .boton_more-primary{
+     color: var(--blue);
+     background-color: var(--gold);
+    }
+
+    .boton_more-primary:hover{
+      background-color: rgb(77, 75, 11);
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .menu {
+        font-size: 24px;
+        display:inline;
+      }
+
+      button {
+        width: 90%;
+        margin: 10px auto;
+      }
+    }
+  </style>
+  <title>Principal</title>
+</head>
+<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div>
+    <div style="background: url(Escuela\ background.jpg); display: flex; flex-direction: column; align-items: center; padding: 20px;">
+      <div style="display: flex; align-items: center;">
+        <img src="cbtl.png" style="width: 80px; height: 80px;">
+        <h1>
+          CBT. DR. EZEQUIEL CAPISTRÁN RODRÍGUEZ, METEPEC
+        </h1>
+      </div>
+    </div>
+    <div>
+      <nav class="menu">
+        <ul>
+          <a href="#">
+            <button style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;cursor: pointer;">
+              <i class="bi bi-house"></i> Principal</button>
+          </a>
+          <a href="/Pagina_Cbt/Sobre_Nosotros/Sobre_nosotros.html">
+            <button style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;cursor: pointer;">
+              <i class="bi bi-body-text"></i> Conocenos</button>
+          </a>
+          <a href="/Pagina_Cbt/Carreras/Carreras.html">
+            <button style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;cursor: pointer;">
+              <i class="bi bi-book-fill"></i> Carreras</button>
+          </a>
+          <a href="/Pagina_Cbt/Revista/Revista.html">
+            <button style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;cursor: pointer;" target="_blank">
+              <i class="bi bi-book-half"></i> Revista</button>
+          </a>
+          <a href="/Pagina_Cbt/Soles/Pagina_Soles.html">
+            <button style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;cursor: pointer;">
+              <i class="bi bi-music-note-beamed"></i> Banda de marcha</button>
+          </a>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <section>
+    <div style="bottom: 30%;padding: 0 50px;">
+      <h1 style="font-size: 7rem; text-align: center;">
+        <span>B</span>
+        <span>I</span>
+        <span>E</span>
+        <span>N</span>
+        <span>V</span>
+        <span>E</span>
+        <span>N</span>
+        <span>I</span>
+        <span>D</span>
+        <span>O</span>
+        <span>S</span>
+      </h1>
+      <h2 style="font-size: 4rem; text-align: center;">CBT Dr Ezequiel Capistrán Rodríguez, Metepec</h2>
+        <p style="font-size: 1.1rem;margin-top: 20px;margin-bottom: 20px; text-align: center;">
+          Somos una institución de Bachillerato Tecnológico que ofrece las carreras de Técnico en Informática, Técnico en Contabilidad, Técnico en Diseño Asistido por Computadora y Técnico en Administración.
+          Introducimos a nuestros alumnos al campo laboral de sus respectivas carreras, dotandolos de conocimientos de tronco común e introducciones a su carrera.
+        </p>
+        <p style="font-size: 1.1rem;margin-top: 20px;margin-bottom: 20px; text-align: center;">
+          ¡Así preparamos de la mejor forma posible a cada generación de alumnos!
+        </p>
+    </div>
+  </section>
+  <section class="boton__sections">
+   <article class="Botones__cards container">
+    <div class="Boton__card-info">
+     <h1>Puedes consultar información aqui</h1>
+     <p>En nuestra escuela puedes encontrar distintas actividades además de las clases que imparten nuestros profesores altamente capacitados, que te
+      ofreceran la educación no solo de bachillerato de tronco común sino que tambien te daran la enseñanza de la carrera técnica que el alumno haya escogido
+     </p>
+    </div>
+    <div class="Boton__card-card">
+      <div class="Boton__card">
+        <a href="/Pagina_Cbt/Sobre_Nosotros/Sobre_nosotros.html" class="boton_more">
+         <i class="bi bi-body-text"></i>
+         <h2>Sobre Nosotros</h2>
+         <p>
+           Aqui te explicaremos de mejor manera el funcionamiento del CBT así como te actualizaremos de las convocatorias para
+           el ingreso al plantel como alumno. Asi como te explicaremos como funciona todo lo relacionado a la carga académico-laboral.
+         </p>
+        </a>
+      </div>
+      <div class="Boton__card">
+        <a href="/Pagina_Cbt/Carreras/Carreras.html" class="boton_more">
+          <i class="bi bi-book-fill"></i>
+          <h2>Carreras</h2>
+          <p>
+           Aqui te daremos toda la información respecto a las carreras que manejamos dentro del CBT, lo que involucra cada una
+           y su carga académica, así como se mostraran evidencias de trabajos hechos por alumnos.
+          </p>
+        </a>
+      </div>
+      <div class="Boton__card">
+        <a href="/Pagina_Cbt/Revista/Revista.html" class="boton_more">
+         <i class="bi bi-book-half"></i>
+         <h2>Revistas</h2>
+         <p>
+           Dentro de estas, encontraras varios articulos hechos por maestros y algunos detalles de alumnos, todos estos muestran a las
+           10 académias dentro de la escuela, así como una introdución y actialización respecto a las actividades de banda.
+         </p>
+        </a>
+      </div>
+      <div class="Boton__card">
+        <a href="/Pagina_Cbt/Control escolar/Control_escolar.html" class="boton_more">
+          <i class="bi bi-wrench-adjustable-circle-fill"></i>
+         <h2>Control escolar</h2>
+         <p>
+           Aqui encontraras información acerca de las titulaciones, certificados y/o problemas técnicos en relación a la escuela,
+           tambien encontraras información de contacto con el encargado del área.
+         </p>
+        </a>
+      </div>
+      <div class="Boton__card">
+        <a href="/Pagina_Cbt/Directorio/directorio.html" class="boton_more">
+          <i class="bi bi-tags"></i>
+         <h2>Directorio</h2>
+         <p>
+           Aqui encontraras información respecto a nuestros directivos dentro del CBT, así como información del equipo docente y sus
+           áreas de especialidad.
+         </p>
+        </a>
+      </div>
+      <div class="Boton__card">
+        <a href="/Pagina_Cbt/Soles/Pagina_Soles.html" class="boton_more">
+          <i class="bi bi-music-note-beamed"></i>
+         <h2>Banda de marcha</h2>
+         <p>
+           La banda de marcha Soles de Metepec esta compuesta por los estudiantes! En esta sección encontraras toda la información respecto a ella.
+           Tambien encontraras experiencias de los alumnos, videos de presentaciones así como fotos tomadas en tiempo real de las mismas.
+         </p>
+        </a>
+      </div>
+    </div>
+   </article>
+  </section>
+
+  <section>
+    <footer class="Piedepagina">
+      <div class="grupo1">
+        <div class="box">
+          <figure>
+            <a href="#">
+              <img src="cbtl.png" alt="logo del cbt">
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>
+            Siguenos! <i class="bi bi-phone"></i>
+          </h2>
+          <div class="redsocial">
+            <a href="https://www.facebook.com/share/1Av1PweKD8/?mibextid=wwXIfr"><i class="bi bi-facebook"></i></a>
+            <a href="www.google.com"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="box">
+          <h2>
+            Contactanos <i class="bi bi-chat"></i>
+          </h2>
+          <p>
+            Aqui van los contactos para informes
+          </p>
+        </div>
+      </div>
+      <div class="grupo2">
+        <small>
+          <i class="fa fa-copyright" aria-hidden="true">
+            &copy 2025
+            Todos los derechos reservados
+            CBT Dr. Ezequiel Capistrán Rodríguez
+            Desarrolladores:
+            Sid Aminadab B. O.
+            April Elizabeth T. O.
+            Frida G. R
+          </i>
+        </small>
+      </div>
+    </footer>
+  </section>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    :root {
+      --primario: #121668b6;
+      --secundario: #3da77296;
+      --terciario: #2e6f47;
+      --fondo: #bebebe;
+      --background_color: rgba(36, 121, 20, 0.664);
+      --white:rgb(250,250,250);
+      --blue:rgb(29, 34, 105);
+      --aquamarine:rgb(24, 141, 83);
+      --gold:rgb(139, 137, 16);
+      --green:rgb(29, 95, 23);
+      --blue_grey: rgba(97, 92, 158, 0.836);
+      --blue_grey2: rgba(70, 65, 128, 0.836);
+      --blue_grey3:rgba(51, 46, 97, 0.836);
+    }
+
+    .que_son h1{
+    font-family: "Bitter", serif;
+    text-align: center;
+    font-weight: 600;
+    font-size: 35px;
+    }
+
+    h3{
+   padding: 0.5px;
+  transform:translate(0%,0%);
+  font-size: 6em; 
+  color:transparent;
+  text-transform:uppercase;
+  text-align: center; justify-items: center;
+  border: #000000 20px;
+  font-family: "Libre Baskerville", serif; 
+}
+h3 span:nth-child(1){
+  position:absolute;
+  top:0; left:0; color: #ffffff;
+  transition:0.5s;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  overflow:hidden;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  border: #000000 20px;
+}
+h3:hover span:nth-child(1){
+  transform:translateY(-18px); 
+}
+h3 span:nth-child(2){
+  position:absolute;
+  top:0; left:0; color: #ffffff;
+  transition:0.5s;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+  overflow:hidden;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  border: #000000 20px;
+}
+h3:hover span:nth-child(2){
+  transform:translateY(18px); 
+}
+h3 span:nth-child(3){
+  position:absolute;
+  top:50%; left: 0;
+  transform:translateY(-50%) scaleY(0);
+  width: 97%; color: #000000;
+  background:#ff0;
+  font-size: 0.25em; font-weight: 800;
+  letter-spacing:0.7em;
+  text-align:center;
+  justify-content: center;
+  padding-left: 20px; margin-left: 5px;
+  transition:0.5s;
+  font-family: "Sedan", serif;
+  font-style: italic;
+  border: #000000 20px;
+}
+h3:hover span:nth-child(3){
+  transform:translateY(-50%) scaleY(1);
+}
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family:'Times New Roman', Times, serif;
+    }
+
+    .que_son{
+    bottom: 30%;
+    padding: 0 50px;
+    background-color: var(--background_color);
+    }
+
+    .Experiencia{
+    bottom: 30%;
+    padding: 0 50px;
+    }
+
+    .Piedepagina{
+     width: 100%;
+     background: linear-gradient(to right, #14006b94, #00526b94);
+    }
+
+    .Piedepagina .grupo1{
+     width: 100%;
+     max-width: 1200px;
+     margin: auto;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-gap: 50px;
+     padding: 45px 0px;
+    }
+
+    .Piedepagina .grupo1 .box figure{
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+
+    .Piedepagina .grupo1 .box figure img{
+     width: 250px;
+     height: 250px;
+    }
+
+    .Piedepagina .grupo1 .box h2{
+     color: white;
+     margin-bottom: 25px;
+     font-size: 50px;
+    }
+
+    .Piedepagina .grupo1 .redsocial a{
+     display: flex;
+     flex-direction: column;
+     text-decoration: none;
+     width: 45px;
+     height: 45px;
+     line-height: 50px;
+     color: #ffffff;
+     margin-right: 10px;
+     background: linear-gradient(to right, #0f005094, #00354694);
+     text-align: center;
+     justify-content: center;
+     align-items: center;
+     transition: all 300ms ease;
+     cursor: pointer;
+    }
+
+    .Piedepagina .grupo1 .redsocial a:hover{
+     color: #121768;
+    }
+
+    .Piedepagina .grupo2{
+     background: linear-gradient(to right, #170a4e94, #0a2f4e94);
+     padding: 15px 10px;
+     text-align: center;
+     color: white;
+    }
+
+    .Piedepagina .grupo2 small{
+     font-size: 15px;
+    }
+
+    @media screen and (max-width: 800px){
+      .Piedepagina .grupo1{
+     width: 90%;
+     grid-template-columns: repeat(1, 1fr);
+     grid-gap: 30px;
+     padding: 35px 0px;
+    }
+    }
+
+    .sticky-social-container{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     position: fixed;
+     top: 34%;
+     width: 200px;
+     z-index: 99;
+     left: -155px;
+    }
+
+    .sticky-social a{
+     list-style: none;
+     text-decoration: none;
+     background-color: var(--blue_grey);
+     display: flex;
+     align-items: center;
+     justify-content: end;
+     margin-bottom: 10px;
+     height: 46px;
+     border-radius: 25px;
+     transition: all 0.25s ease-in-out;
+    }
+
+    .sticky-social a:hover{
+     background-color: var(--blue_grey2);
+     margin-right: -110px;
+    }
+
+    .sticky-social a i{
+     margin: 0 10px;
+     font-size: 20px;
+     color: var(--blue)
+    }
+
+    .sticky-social a i:hover{
+     color: var(--blue_grey3);
+    }
+
+    .sticky-social a p{
+     font-size: 1.1rem;
+     color: var(--blue);
+     font-weight: 900;
+    }
+
+    .menu{
+     background: transparent;
+     width: 500 px;
+     height: 50px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: self-start;
+     display: flex; 
+     align-items: center;
+    }
+
+    button {
+      background-color: var(--terciario);
+      color: white;
+      font-size: 1rem;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: var(--secundario);
+      transform: scale(1.05);
+    }
+
+    @media only screen and (max-width: 1024px){
+      
+      .sticky-social-container{
+       left: -160px;
+      }
+      
+      .sticky-social a{
+       height: 36px;
+      }
+
+      .sticky-social a:hover{
+       margin-right: -100px;
+      }
+
+      .sticky-social a i{
+       font-size: 22px;
+      }
+    }
+
+  </style>
+
+  <title>Soles de Metepec</title>
+</head>
+<body>
+  <div>
+ <div style="background-image: url(upscalemedia-transformed.jpeg); background-size: 100%; display: flex; flex-direction: column; align-items: center; padding: 20px; height: 200px; position: relative; text-align: center; justify-content: center;">
+    <div style="display: flex; align-items: center; text-align: center; margin-bottom: 50px; justify-content: center; margin-top: 20px;">
+      <h3 id="Easter_egg" style="text-align: center; ">
+        Soles de Metepec
+        <span>Soles de Metepec</span>
+        <span>Soles de Metepec</span>
+        <span>Marching Band</span>
+      </h3>
+    </div>
+  </div>
+  </div>
+
+  <section class="que_son">
+    <main>
+      <div>
+      <h1>
+        Introdución
+      </h1>
+      <p style="text-align: justify;">
+        En esta sección encontraras todo lo relacionado a la marching band Soles de Metepec, presentaciones, instrumentos, actividades, experiencias de alumnos actuales y egresados
+        todo para que tengas un conocimiento completo de la misma.
+      </p>
+    </div>
+    </main>
+    <div>
+      
+    </div> 
+  </section>
+
+  <section class="Experiencia">
+    <div>
+      <h1>
+        Experiencias de los integrantes 
+      </h1>
+
+      <p>
+        Aqui los alumnos y alumnas participantes de la banda, tienen la oportunidad de comentar sus experiencias dentro de la banda, 
+        canciones que ellos interpretaron o interpreta, incluso los instrumentos que tocaron/tocan durante su estadia.
+      </p>
+
+      <script src="https://utteranc.es/client.js"
+        repo="elizaabtq/gestion-comentarios"
+        issue-term="pathname"
+        theme="dark-blue"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </div>
+  </section>
+
+  <section class="sticky-social-container">
+    <article class="sticky-social">
+     <a href="/Pagina_Cbt/Pagina_web.html">
+      <p>Principal</p>
+      <i class="bi bi-house"></i>
+     </a>
+     <a href="/Pagina_Cbt/Sobre_Nosotros/Sobre_nosotros.html">
+      <p>Conocenos</p>
+      <i class="bi bi-body-text"></i>
+     </a>
+     <a href="/Pagina_Cbt/Carreras/Carreras.html">
+       <p>Carreras</p>
+       <i class="bi bi-book-fill"></i>
+     </a>
+     <a href="/Pagina_Cbt/Revista/Revista.html">
+       <p>Revista</p>
+       <i class="bi bi-book-half"></i>
+     </a>
+    </article>
+ </section>
+ <section>
+  <footer class="Piedepagina">
+    <div class="grupo1">
+      <div class="box">
+        <figure>
+          <a href="#">
+            <img src="cbtl.png" alt="logo del cbt">
+          </a>
+        </figure>
+      </div>
+      <div class="box">
+        <h2>
+          Siguenos! <i class="bi bi-phone"></i>
+        </h2>
+        <div class="redsocial">
+          <a href="https://www.facebook.com/SolesDeMetepecMarchingBand/?locale=es_LA"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/solesdemetepecmb/"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div class="box">
+        <h2>
+          Contactanos <i class="bi bi-chat"></i>
+        </h2>
+        <p>
+          Aqui van los contactos para informes
+        </p>
+      </div>
+    </div>
+    <div class="grupo2">
+      <small>
+        <i class="fa fa-copyright" aria-hidden="true">
+          &copy 2025
+          Todos los derechos reservados
+          CBT Dr. Ezequiel Capistrán Rodríguez
+          Desarrolladores:
+          Sid Aminadab B. O.
+          April Elizabeth T. O.
+          Frida G. R
+        </i>
+      </small>
+    </div>
+  </footer>
+</section>
+</body>
+</html>

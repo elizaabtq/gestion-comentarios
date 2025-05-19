@@ -1,0 +1,514 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    :root {
+      --primario: #121768;
+      --secundario: #3da772;
+      --terciario: #2e6f47;
+      --fondo: #bebebe;
+      --background_color: rgba(103, 113, 255, 0.562);
+      --white:rgb(250,250,250);
+      --blue:rgb(29, 34, 105);
+      --aquamarine:rgb(24, 141, 83);
+      --gold:rgb(139, 137, 16);
+      --green:rgb(29, 95, 23);
+      --blue_grey: rgba(97, 92, 158, 0.836);
+      --blue_grey2: rgba(70, 65, 128, 0.836);
+      --blue_grey3:rgba(51, 46, 97, 0.836);
+    }
+
+    .quienessomos{
+     background-color: var(--background_color);
+     display: flex;
+     height: 88%;
+     align-items:center;
+     flex-basis: 50%;
+     flex-direction:column;
+    }
+
+    .quienessomos h2{
+     color: #1f0853;
+     font-size: 80px;
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+    }
+
+    .quienessomos br{
+     color: #000000;
+     font-size: 20px;
+     line-height: 20px;
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+    }
+
+    a{
+     text-decoration: none;
+     color: black;
+    }
+
+    .menu{
+     background: transparent;
+     width: 500 px;
+     height: 50px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: self-start;
+     display: flex; 
+     align-items: center;
+    }
+
+    button {
+      background-color: var(--terciario);
+      color: white;
+      font-size: 1rem;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: var(--secundario);
+      transform: scale(1.05);
+    }
+
+    h1{
+     color: white;
+     font-family: 'Merriweather', serif;
+     font-size: 1.8rem;
+     margin-left: 10px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: var(--fondo);
+      font-family:'Times New Roman', Times, serif;
+    }
+
+    .Piedepagina{
+     width: 100%;
+     background: linear-gradient(to right, #14006b94, #00526b94);
+    }
+
+    .Piedepagina .grupo1{
+     width: 100%;
+     max-width: 1200px;
+     margin: auto;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-gap: 50px;
+     padding: 45px 0px;
+    }
+
+    .Piedepagina .grupo1 .box figure{
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+
+    .Piedepagina .grupo1 .box figure img{
+     width: 250px;
+     height: 250px;
+    }
+
+    .Piedepagina .grupo1 .box h2{
+     color: white;
+     margin-bottom: 25px;
+     font-size: 50px;
+    }
+
+    .Piedepagina .grupo1 .redsocial a{
+     display: flex;
+     flex-direction: column;
+     text-decoration: none;
+     width: 45px;
+     height: 45px;
+     line-height: 50px;
+     color: #ffffff;
+     margin-right: 10px;
+     background: linear-gradient(to right, #0f005094, #00354694);
+     text-align: center;
+     justify-content: center;
+     align-items: center;
+     transition: all 300ms ease;
+     cursor: pointer;
+    }
+
+    .Piedepagina .grupo1 .redsocial a:hover{
+     color: #121768;
+    }
+
+    .Piedepagina .grupo2{
+     background: linear-gradient(to right, #170a4e94, #0a2f4e94);
+     padding: 15px 10px;
+     text-align: center;
+     color: white;
+    }
+
+    .Piedepagina .grupo2 small{
+     font-size: 15px;
+    }
+
+    @media screen and (max-width: 800px){
+      .Piedepagina .grupo1{
+     width: 90%;
+     grid-template-columns: repeat(1, 1fr);
+     grid-gap: 30px;
+     padding: 35px 0px;
+    }
+    }
+
+    .sticky-social-container{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     position: fixed;
+     top: 34%;
+     width: 200px;
+     z-index: 99;
+     left: -155px;
+    }
+
+    .sticky-social a{
+     list-style: none;
+     text-decoration: none;
+     background-color: var(--blue_grey);
+     display: flex;
+     align-items: center;
+     justify-content: end;
+     margin-bottom: 10px;
+     height: 46px;
+     border-radius: 25px;
+     transition: all 0.25s ease-in-out;
+    }
+
+    .sticky-social a:hover{
+     background-color: var(--blue_grey2);
+     margin-right: -110px;
+    }
+
+    .sticky-social a i{
+     margin: 0 10px;
+     font-size: 20px;
+     color: var(--blue)
+    }
+
+    .sticky-social a i:hover{
+     color: var(--blue_grey3);
+    }
+
+    .sticky-social a p{
+     font-size: 1.1rem;
+     color: var(--blue);
+     font-weight: 900;
+    }
+
+    @media only screen and (max-width: 1024px){
+      
+      .sticky-social-container{
+       left: -160px;
+      }
+      
+      .sticky-social a{
+       height: 36px;
+      }
+
+      .sticky-social a:hover{
+       margin-right: -100px;
+      }
+
+      .sticky-social a i{
+       font-size: 22px;
+      }
+    }
+
+    .Card_carrera{
+     max-width: 25%;
+     border: solid 1px var(--aquamarine);
+     margin: 3rem 1rem;
+     padding: 2rem 1rem;
+     border-radius: 5px;
+     background-color: rgba(69, 64, 88, 0.3);
+     transition: .5s, color .10s;
+     -webkit-transition: .5s, color .10s;
+     -moz-transition: .5s, color .10s;
+     cursor: pointer;
+     display: inline-block;
+     flex-direction: column;
+     align-items: center;
+     flex-basis: 50%;
+    }
+
+    .Card_carrera:hover{
+     box-shadow: 0 8px 8px 0 #000000,0 8px 8px 0 #000000;
+     transform: translate(0px,5px);
+     -webkit-transform: translate(0px,5px);
+     -moz-transform:translate(0px,5px);
+    }
+
+    .Informacion{
+     background-color: var(--fondo);
+    }
+
+    .Informacion h3{
+     font-size: 35px;
+     color: #040279;
+     font-weight: 900;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+
+    .Informacion h4{
+     font-size: 35px;
+     color: #040279;
+     font-weight: 900;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+
+    .Informacion h5{
+     font-size: 35px;
+     color: #040279;
+     font-weight: 900;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+
+    .Informacion p{
+     font-size: 25px;
+     font-weight: 500;
+     color: #000000;
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+    }
+
+    .Informacion li{
+     font-size: 25px;
+     font-weight: 500;
+     color: #000000;
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+    }
+  </style>
+  <title>Sobre Nosotros</title>
+
+</head>
+<body>
+  <div style="background: linear-gradient(to right, var(--primario), var(--secundario)); display: flex; flex-direction: column; align-items: center; padding: 20px;">
+    <div style="display: flex; align-items: center;">
+      <img src="cbtl.png" style="width: 80px; height: 80px;">
+      <h1>CONOCENOS <i class="bi bi-body-text"></i></h1>
+    </div>
+  </div>
+ <section class="sticky-social-container">
+    <article class="sticky-social">
+     <a href="/Pagina_Cbt/Pagina_web.html">
+      <p>Principal</p>
+      <i class="bi bi-house"></i>
+     </a>
+     <a href="/Pagina_Cbt/Carreras/Carreras.html">
+       <p>Carreras</p>
+       <i class="bi bi-book-fill"></i>
+     </a>
+     <a href="/Pagina_Cbt/Revista/Revista.html">
+       <p>Revista</p>
+       <i class="bi bi-book-half"></i>
+     </a>
+   </a>
+     <a href="/Pagina_Cbt/Soles/Pagina_Soles.html">
+       <p>Banda</p>
+       <i class="bi bi-music-note-beamed"></i>
+     </a>
+    </article>
+ </section>
+ <section class="quienessomos">
+   <div style="bottom: 30%;padding: 0 50px;">
+     <h2 style="font-size: 7rem; text-align: center;">
+       ¿Quienes somos? <i class="bi bi-stars"></i>
+     </h2 max-width: 900px;>
+     <br style="font-size: 1.1rem;margin-top: 1.1rem;margin-bottom: 1.1rem;justify-content: center;padding: 50px 0; text-align: center;display: flex;flex-direction: column;align-items: center;">
+      La escuela preparatoria C.B.T. Dr. Ezequiel Capistran Rodríguez, Metepec es una
+      institución educativa que forma parte del Colegio de Bachilleres del Estado de
+      México. Fue fundada en el año 1996 con el objetivo de ofrecer educación
+      media superior de calidad a los jóvenes del municipio de Metepec.
+      La escuela lleva el nombre del Dr. Ezequiel Capistran Rodríguez, quien fue un
+      destacado médico y académico de la región. Su legado se refleja en la formación
+      integral que se busca brindar a los estudiantes, promoviendo valores como la
+      responsabilidad, el compromiso y la excelencia académica.
+      La organización general de la escuela preparatoria se compone de diferentes
+      áreas, como la dirección, la subdirección académica, la subdirección
+      administrativa, el departamento de servicios escolares y el departamento de
+      orientación educativa. Además, cuenta con un cuerpo docente altamente
+      calificado y comprometido con la educación de los estudiantes.
+      La escuela preparatoria C.B.T. Dr. Ezequiel Capistran Rodríguez ofrece una
+      amplia variedad de programas educativos, actividades extracurriculares y
+      servicios de apoyo para garantizar el desarrollo integral de los jóvenes. Asimismo,
+      fomenta la participación activa de la comunidad estudiantil en eventos culturales,
+      deportivos y sociales que enriquecen su formación.      
+     </br>
+   </div>
+   <div class="Card_carrera">
+    <a href="/Pagina_Cbt/Carreras/Carreras.html">
+      <h4>
+        Carreras <i class="bi bi-book-fill"></i>
+      </h4>
+      <p>
+        Aqui podras encontrar toda la información relacionada a las carreras que se imparten en el CBT!
+      </p>
+    </a>
+   </div>
+ </section>
+
+ <section style="bottom: 30%;padding: 0 50px;">
+   <div class="Informacion">
+     <h3>
+       Misión <i class="bi bi-pin-angle"></i>
+     </h3>
+     <p>
+      Formar jóvenes competentes, responsables y comprometidos con su
+      entorno social, cultural y ambiental, a través de una educación integral de calidad
+      que promueva la excelencia académica y el desarrollo personal.
+    </p>
+    <p>
+      Los
+      Centros de Bachillerato Tecnológico del Estado de México, ofrecen una formación integral para la incorporación de las y los estudiantes a la vida productiva
+      y/o acceder a estudios superiores, además de la participación en la toma de decisiones para mejorar su calidad de vida y el bienestar comunitario
+    </p>
+     <h4>
+       Visión <i class="bi bi-pin-angle"></i>
+     </h4>
+     <p>
+       Ser reconocidos como una institución educativa de excelencia, que
+       impulsa la formación de ciudadanos críticos, creativos y solidarios, capaces de
+       contribuir al desarrollo sostenible de su comunidad y del país.
+     </p>
+     <p>
+       Los Centros de Bachillerato Tecnológico del Estado de México, son reconocidos como instituciones de calidad que contribuyen al desarrollo humano y al
+       progreso estatal sustentándose en los principios de identidad, honestidad, equidad, cultura de la paz, responsabilidad ciudadana, interculturalidad y respeto por
+       la naturaleza entre las y los participantes del proceso educativo
+     </p>
+     <h5>
+       Valores <i class="bi bi-person"></i>
+     </h5>
+     <p>
+       <ul>
+        <li>
+         Respeto: Promovemos el respeto hacia todas las personas, sus ideas, creencias y
+         diferencias culturales.
+        </li>
+        <li>
+         Responsabilidad: Fomentamos la responsabilidad en el cumplimiento de
+         deberes y compromisos, tanto en el ámbito académico como en el personal.
+        </li>
+        <li>
+         Solidaridad: Impulsamos la solidaridad como valor fundamental para construir
+         una sociedad más justa y equitativa.
+        </li>
+        <li>
+         Ética: Inculcamos principios éticos y morales en todas nuestras acciones,
+         promoviendo la honestidad, la transparencia y la integridad.
+        </li>
+        <li>
+         Excelencia: Buscamos la excelencia en la formación académica y en el desarrollo
+         personal de nuestros estudiantes, promoviendo la mejora continua y el esfuerzo
+        </li>
+       </ul>
+     </p>
+     <h3>
+       Objetivo <i class="bi bi-tag"></i>
+     </h3>
+     <p>
+      Impartir
+      una formación tecnológica integral de tipo Medio Superior, la cual permite a las y los estudiantes el ingreso a la Educación Superior y/o la incorporación
+      al sector productivo, ofertando carreras técnicas acordes a las distintas regiones y contextos de la entidad
+     </p>
+   </div>
+ </section>
+
+ <section style="bottom: 30%;padding: 0 50px;">
+  <div class="fundador">
+    <h1 style="font-size: 35px; color: #040279; font-weight: 900;">
+      Nuestro fundador <i class="bi bi-person-circle"></i>
+    </h1>
+    <p style="font-size: 25px; font-weight: 500; color: #000000; padding: 0; margin: 0; box-sizing: border-box;">
+      El Dr. Ezequiel Capistrán Rodríguez nació en el año de 1905 la Cd. de México, D.F., de la cual emigro con su esposa
+      en busca de un lugar tranquilo donde pudiera poner en práctica sus conocimientos de Medicina y al mismo tiempo 
+      ayudar a la comunidad, instalandose en Metepec, Edo. de Méx. en el año de 1934, donde empezó su labor altruista apoyado
+      de su esposa la Sra. Adela Venegas de Capistrán.
+    </p>
+  </div>
+ </section>
+ 
+ <section style="display: flex; align-items: center; justify-content: center; align-items: center; background: #6ea5b3;">
+  <div>
+    <ul>
+      <p style="display:flex;align-items: center;flex-direction: column;justify-content: center; font-size: xxx-large; font-weight: 900; color:var(--blue); font-family: 'Times New Roman', Times, serif;"> Aqui nos encuentras!!!</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.5960708290663!2d-99.6119125!3d19.256427999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8bc81e5bd75f%3A0xb551e099f7334b75!2sCBT%20Dr.%20Ezequiel%20Capistr%C3%A1n%20Rodr%C3%ADguez%2C%20Metepec!5e0!3m2!1ses-419!2smx!4v1746123994383!5m2!1ses-419!2smx" 
+      width="1200" height="450" style="border:0;" 
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <p style="display:flex;align-items: center;flex-direction: column;justify-content: center; font-size: xx-large; font-weight: 900; color:var(--blue); font-family: 'Times New Roman', Times, serif;">Puedes venir a conocer la institución en esta dirección!!</p>
+    </ul>
+  </div>
+</section>
+<section>
+  <footer class="Piedepagina">
+    <div class="grupo1">
+      <div class="box">
+        <figure>
+          <a href="#">
+            <img src="cbtl.png" alt="logo del cbt">
+          </a>
+        </figure>
+      </div>
+      <div class="box">
+        <h2>
+          Siguenos! <i class="bi bi-phone"></i>
+        </h2>
+        <div class="redsocial">
+          <a href="https://www.facebook.com/share/1Av1PweKD8/?mibextid=wwXIfr"><i class="bi bi-facebook"></i></a>
+          <a href="www.google.com"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div class="box">
+        <h2>
+          Contactanos <i class="bi bi-chat"></i>
+        </h2>
+        <p>
+          Aqui van los contactos para informes
+        </p>
+      </div>
+    </div>
+    <div class="grupo2">
+      <small>
+        <i class="fa fa-copyright" aria-hidden="true">
+          &copy 2025
+          Todos los derechos reservados
+          CBT Dr. Ezequiel Capistrán Rodríguez
+          Desarrolladores:
+          Sid Aminadab B. O.
+          April Elizabeth T. O.
+          Frida G. R
+        </i>
+      </small>
+    </div>
+  </footer>
+</section>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<html>
+  <head>
+    <style>
+      :root {
+        --primario: #121768;
+        --secundario: #3da772;
+        --terciario: #2e6f47;
+        --fondo: #bebebe;
+        --background_color: rgb(135, 152, 155);
+        --white:rgb(250,250,250);
+        --blue:rgb(29, 34, 105);
+        --aquamarine:rgb(24, 141, 83);
+        --gold:rgb(139, 137, 16);
+        --green:rgb(29, 95, 23);
+        --blue_grey: rgba(97, 92, 158, 0.836);
+        --blue_grey2: rgba(70, 65, 128, 0.836);
+        --blue_grey3:rgba(51, 46, 97, 0.836);
+      }
+
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      h1 {
+        color: white;
+        font-family: 'Merriweather', serif;
+        font-size: 2rem;
+        margin-left: 10px;
+        text-shadow: 0 1px #b7b7b7, 0 2px #b7b7b7, 0 3px #b7b7b7, 0 4px #b7b7b7, 0 5px #b7b7b7, 0 6px transparent, 0 7px transparent,0 8px transparent, 0 9px transparent, 0 10px 10px rgba(0,0,0.5)
+      }
+
+      .Piedepagina{
+        width: 100%;
+        background: linear-gradient(to right, #14006b94, #00526b94);
+      }
+
+      .Piedepagina .grupo1{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 50px;
+        padding: 45px 0px;
+      }
+
+      .Piedepagina .grupo1 .box figure{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .Piedepagina .grupo1 .box figure img{
+        width: 250px;
+        height: 250px;
+      }
+
+      .Piedepagina .grupo1 .box h2{
+        color: white;
+        margin-bottom: 25px;
+        font-size: 50px;
+      }
+
+      .Piedepagina .grupo1 .redsocial a{
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        width: 45px;
+        height: 45px;
+        line-height: 50px;
+        color: #ffffff;
+        margin-right: 10px;
+        background: linear-gradient(to right, #0f005094, #00354694);
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        transition: all 300ms ease;
+        cursor: pointer;
+      }
+
+      .Piedepagina .grupo1 .redsocial a:hover{
+        color: #121768;
+      }
+
+      .Piedepagina .grupo2{
+        background: linear-gradient(to right, #170a4e94, #0a2f4e94);
+        padding: 15px 10px;
+        text-align: center;
+        color: white;
+      }
+
+      .Piedepagina .grupo2 small{
+        font-size: 15px;
+      }
+
+      @media screen and (max-width: 800px){
+        .Piedepagina .grupo1{
+          width: 90%;
+          grid-template-columns: repeat(1, 1fr);
+          grid-gap: 30px;
+          padding: 35px 0px;
+        }
+      }
+
+      .sticky-social-container{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        position: fixed;
+        top: 34%;
+        width: 200px;
+        z-index: 99;
+        left: -155px;
+      }
+
+      .sticky-social a{
+        list-style: none;
+        text-decoration: none;
+        background-color: var(--blue_grey);
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        margin-bottom: 10px;
+        height: 46px;
+        border-radius: 25px;
+        transition: all 0.25s ease-in-out;
+      }
+
+      .sticky-social a:hover{
+        background-color: var(--blue_grey2);
+        margin-right: -110px;
+      }
+
+      .sticky-social a i{
+        margin: 0 10px;
+        font-size: 20px;
+        color: var(--blue)
+      }
+
+      .sticky-social a i:hover{
+        color: var(--blue_grey3);
+      }
+
+      .sticky-social a p{
+        font-size: 1.1rem;
+        color: var(--blue);
+        font-weight: 900;
+      }
+
+      @media only screen and (max-width: 1024px){
+        
+        .sticky-social-container{
+           left: -160px;
+        }
+        
+        .sticky-social a{
+          height: 36px;
+        }
+
+        .sticky-social a:hover{
+          margin-right: -100px;
+        }
+
+        .sticky-social a i{
+          font-size: 22px;
+        }
+      }
+
+      .table{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border-collapse: collapse;
+        border: 2px solid black;
+        flex-direction: column;
+      }
+
+      .table th{
+        border: 1px solid black;
+        font-size: 75px;
+        font-weight: 800px;
+        text-align: center;
+      }
+
+      .table td{
+        border: 1px solid black;
+        text-align: right;
+        font-size: 25px;
+        font-weight: 200px;
+      }
+
+      .table caption{
+        font-size: 70px;
+        font-weight: 900px;
+        text-align: center;
+        text-size-adjust:initial;
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Directorio</title>
+  </head>
+  <body>
+    <div>
+      <div style="background: linear-gradient(to right, var(--primario), var(--secundario)); display: flex; flex-direction: column; align-items: center; padding: 20px;">
+        <div style="display: flex; align-items: center;">
+          <img src="cbtl.png" style="width: 80px; height: 80px;">
+          <h1>
+            Directorio
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <section class="sticky-social-container">
+      <article class="sticky-social">
+       <a href="/Pagina_Cbt/Pagina_web.html">
+        <p>Principal</p>
+        <i class="bi bi-house"></i>
+       </a>
+       <a href="/Pagina_Cbt/Sobre_Nosotros/Sobre_nosotros.html">
+        <p>Sobre nosotros</p>
+        <i class="bi bi-body-text"></i>
+       </a>
+       <a href="/Pagina_Cbt/Carreras/Carreras.html">
+         <p>Carreras</p>
+         <i class="bi bi-book-fill"></i>
+       </a>
+       <a href="/Pagina_Cbt/Revista/Revista.html">
+         <p>Revista</p>
+         <i class="bi bi-book-half"></i>
+       </a>
+       <a href="/Pagina_Cbt/Soles/Pagina_Soles.html">
+         <p>Banda</p>
+         <i class="bi bi-music-note-beamed"></i>
+       </a>
+      </article>
+   </section>
+
+   <section>
+      <div class="table">
+        <table>
+          <caption>
+            Cargos dentro de la escuela
+          </caption>
+          <thead>
+           <tr>
+            <th>
+              Cargo
+            </th>
+            <th>
+              Nombre
+            </th>
+           </tr> 
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Director Escolar
+              </td>
+              <td>
+                Lic. Erick Jacob Salinas Caballero
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Subdirector Escolar
+              </td>
+              <td>
+                Lic. Antonio San Juan
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Secretario Escolar
+              </td>
+              <td>
+                Ing. Oliver Giovanni Mojica Jaimes
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Coordinador de los Centros de Computo 
+              </td>
+              <td>
+                Lic. Ricardo Romero Martinez 
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Encargado de Sala de Computo I
+              </td>
+              <td>
+                Ing. José Antonio Del Campo Escobar
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Coordinador de Orientación Escolar y Orientador Escolar
+              </td>
+              <td>
+                Profesor Osvaldo
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Orientador Escolar 
+              </td>
+              <td>
+                Profesor Jose Luis
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Orientador Escolar 
+              </td>
+              <td>
+                Profesor Oscar
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Orientador Escolar 
+              </td>
+              <td>
+                Profesor Hector Hugo Hernandez Colin
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Orientador Escolar 
+              </td>
+              <td>
+                Profesora Silvia
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Orientador Escolar 
+              </td>
+              <td>
+                Maestra en psicología y educación Ofelia Cruz Vega
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+   </section>
+
+    <section>
+      <footer class="Piedepagina">
+        <div class="grupo1">
+          <div class="box">
+            <figure>
+              <a href="#">
+                <img src="cbtl.png" alt="logo del cbt">
+              </a>
+            </figure>
+          </div>
+          <div class="box">
+            <h2>
+              Siguenos! <i class="bi bi-phone"></i>
+            </h2>
+            <div class="redsocial">
+              <a href="https://www.facebook.com/CbtDrEzequielCapistranRodriguezAmbosTurnos/photos_by?locale=es_LA"><i class="bi bi-facebook"></i></a>
+              <a href="www.google.com"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+          <div class="box">
+            <h2>
+              Contactanos <i class="bi bi-chat"></i>
+            </h2>
+            <p>
+              Aqui van los contactos para informes
+              </p>
+          </div>
+        </div>
+        <div class="grupo2">
+          <small>
+            <i class="fa fa-copyright" aria-hidden="true">
+              &copy 2025
+              Todos los derechos reservados
+              CBT Dr. Ezequiel Capistrán Rodríguez
+              Creditos a los alumnos:
+              Sid Aminadab B. O.
+              April Elizabeth T. O.
+            </i>
+          </small>
+        </div>
+      </footer>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,298 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    :root {
+      --primario: #121768;
+      --secundario: #3da772;
+      --terciario: #96a12c;
+      --fondo: #bebebe;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--fondo);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .menu{
+     background: transparent;
+     width: 500 px;
+     height: 50px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: self-start;
+     display: flex; 
+     align-items: center;
+    }
+
+    button {
+      background-color: var(--terciario);
+      color: white;
+      font-size: 1rem;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: var(--secundario);
+      transform: scale(1.05);
+    }
+
+    h1 {
+      color: white;
+      font-family: 'Merriweather', serif;
+      font-size: 1.8rem;
+      margin-left: 10px;
+    }
+
+    button {
+      background-color: var(--terciario);
+      color: white;
+      font-size: 1rem;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: var(--secundario);
+      transform: scale(1.05);
+    }
+
+    .libro {
+      perspective: 1200px;
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin: auto;
+      height: 600px;
+    }
+
+    .pagina {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: white;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      transform-origin: left;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      opacity: 0;
+      transition: transform 1.2s ease, opacity 1s ease;
+      pointer-events: none;
+    }
+
+    .pagina.volteada {
+      transform: rotateY(-180deg);
+      z-index: 0;
+    }
+
+    .pagina.actual {
+      transform: rotateY(0deg);
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+
+    .pagina ul{
+      display: block;
+      color: black;
+    }
+
+    .menu-lateral {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+    }
+
+    .menu-lateral a {
+      padding: 10px 30px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: 1s;
+    }
+
+    .menu-lateral a:hover {
+      background-color: var(--secundario);
+    }
+
+    .btn-menu {
+      font-size: 30px;
+      cursor: pointer;
+      padding: 15px;
+      color: #333333;
+    }
+
+    .menu-lateral .cerrar {
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.4rem;
+        text-align: center;
+        margin: 10px;
+      }
+
+      .libro {
+        height: 400px;
+      }
+
+      .btn-menu {
+        font-size: 24px;
+      }
+
+      button {
+        width: 90%;
+        margin: 10px auto;
+        display: block;
+      }
+    }
+  </style>
+  <title>Revista</title>
+</head>
+<body>
+  <div style="background: linear-gradient(to right, var(--primario), var(--secundario)); display: flex; flex-direction: column; align-items: center; padding: 20px;">
+    <div style="display: flex; align-items: center;">
+      <img src="cbtl.png" style="width: 80px; height: 80px;">
+      <h1>CBT Dr. Ezequiel Capistrán Rodríguez, Metepec</h1>
+    </div>
+    <div style="margin-top: 15px;">
+      <button onclick="paginaAnterior()">&lt;</button>
+      <button onclick="paginaSiguiente()">&gt;</button>
+    </div>
+      <div style="margin-right: 2.5%;">
+        <nav class="menu">
+          <ul>
+            <a href="/Pagina_Cbt/Pagina_web.html">
+              <button style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;cursor: pointer;">
+                <i class="bi bi-house"></i></button>
+            </a>
+            <a href="/Pagina_Cbt/Sobre_Nosotros/Sobre_nosotros.html">
+              <button style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;cursor: pointer;">
+                <i class="bi bi-body-text"></i></button>
+            </a>
+            <a href="/Pagina_Cbt/Carreras/Carreras.html">
+              <button style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;cursor: pointer;">
+                <i class="bi bi-book-fill"></i></button>
+            </a>
+            <a href="#">
+              <button style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;cursor: pointer;" target="_blank">
+                <i class="bi bi-book-half"></i></button>
+            </a>
+            <a href="/Pagina_Cbt/Soles/Pagina_Soles.html">
+              <button style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;cursor: pointer;">
+                <i class="bi bi-music-note-beamed"></i></button>
+            </a>
+          </ul>
+        </nav>
+      </div>
+      </div>
+  </div>
+
+  <span class="btn-menu" onclick="abrirMenu()">&#9776;</span>
+
+  <div style="background:linear-gradient(to right, #3da77286, #1216687a) " id="menuLateral" class="menu-lateral">
+    <a href="javascript:void(0)" class="cerrar" onclick="cerrarMenu()">&times;</a>
+    <p style="font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic; color: #bbc527;font-size: x-large;font-weight: 200; display: flex; flex-direction: column; align-items: center;">Menu</p>
+    <button>Revista 1</button>
+  </div>
+
+  <div class="libro">
+    <div class="pagina actual" id="Portada">Portada</div>
+    <div class="pagina" id="indice">
+    <h2>Indice</h2>
+    <ul>
+      <li>
+        <a href="#" onclick="mostrarPaginaPorNumero(2)">Tema 1</a>
+        <ul>
+          <li>
+            <a href="#" onclick="mostrarPaginaPorNumero(2)">Subtema</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" onclick="mostrarPaginaPorNumero(2)">Tema 2</a>
+        <ul>
+          <li>
+            <a href="#" onclick="mostrarPaginaPorNumero(2)">Subtema</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    </div>
+    <div class="pagina" id="pagina2">P2</div>
+  </div>
+
+  
+
+  <script>
+    let paginaActual = 0;
+    const idsPaginas = ["Portada", "indice", "pagina2"]; // Puedes modificar esto
+
+    function mostrarPaginaPorNumero(numero) {
+      const paginas = document.querySelectorAll(".pagina");
+      paginas.forEach((pagina, index) => {
+        pagina.classList.remove("actual", "volteada");
+        if (index < numero) pagina.classList.add("volteada");
+      });
+
+      const nueva = document.getElementById(idsPaginas[numero]);
+      if (nueva) {
+        nueva.classList.add("actual");
+        paginaActual = numero;
+      }
+    }
+
+    function paginaSiguiente() {
+      if (paginaActual < idsPaginas.length - 1) {
+        mostrarPaginaPorNumero(paginaActual + 1);
+      }
+    }
+
+    function paginaAnterior() {
+      if (paginaActual > 0) {
+        mostrarPaginaPorNumero(paginaActual - 1);
+      }
+    }
+
+    function abrirMenu() {
+      document.getElementById("menuLateral").style.width = "250px";
+    }
+
+    function cerrarMenu() {
+      document.getElementById("menuLateral").style.width = "0";
+    }
+
+
+   document.addEventListener("DOMContentLoaded", () => {
+      mostrarPaginaPorNumero(paginaActual);
+    });
+
+  </script>
+</body>
+</html>
