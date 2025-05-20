@@ -19,6 +19,9 @@
       --blue_grey2: rgba(70, 65, 128, 0.836);
       --blue_grey3:rgba(51, 46, 97, 0.836);
     }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -196,6 +199,105 @@
       }
     }
 
+    .container {
+      display: flex;
+      gap: 20px;
+      padding: 40px;
+      transition: all 0.5s ease;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .card {
+      width: 250px;
+      height: 250px;
+      color: white;
+      padding: 20px;
+      position: relative;
+      cursor: pointer;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.6s ease;
+      box-shadow: 0 0 15px;
+      flex-shrink: 0;
+    }
+
+    .card.blue {
+      background: #1e90ff;
+      box-shadow: 0 0 15px #1e90ff;
+    }
+
+    .card.red {
+      background: #e63946;
+      box-shadow: 0 0 15px #e63946;
+    }
+
+    .card.green {
+      background: #2a9d8f;
+      box-shadow: 0 0 15px #2a9d8f;
+    }
+
+    .card:hover {
+      box-shadow: 0 0 30px white;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(white, transparent, white);
+      animation: spin 4s linear infinite;
+      z-index: 1;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      background: inherit;
+      z-index: 2;
+      border-radius: 10px;
+    }
+
+    .card .content {
+      position: relative;
+      z-index: 3;
+      transition: opacity 0.4s ease;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .hidden {
+      opacity: 0;
+      transform: scale(0);
+      pointer-events: none;
+    }
+
+    .expanded {
+      width: 90vw;
+      height: 90vh;
+      z-index: 5;
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .content.fade-out {
+      opacity: 0;
+    }
+
   </style>
   <title>Carreras</title>
 </head>
@@ -218,7 +320,7 @@
      </a>
      <a href="/Pagina cbt/Pagina_Cbt/Revista/Revista.html">
        <p>Revista</p>
-       <i class="bi bi-book-half"></i>
+     <i class="bi bi-book-half"></i>
      </a>
      <a href="/Pagina cbt/Pagina_Cbt/Soles/Pagina_Soles.html">
        <p>Banda</p>
@@ -226,7 +328,69 @@
      </a>
     </article>
  </section>
+<section>
+  <div class="container">
+    <div class="card blue" onclick="toggleExpand(this, 'Información actualizada del Cuadro 1')">
+      <div class="content">
+        <h3>Cuadro 1</h3>
+        <p>Información importante.</p>
+      </div>
+    </div>
+    <div class="card red" onclick="toggleExpand(this, 'Contenido nuevo del Cuadro 2')">
+      <div class="content">
+        <h3>Cuadro 2</h3>
+        <p>Contenido especial.</p>
+      </div>
+    </div>
+    <div class="card green" onclick="toggleExpand(this, 'Nuevo detalle del Cuadro 3')">
+      <div class="content">
+        <h3>Cuadro 3</h3>
+        <p>Detalles únicos.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    let expandedCard = null;
+    function toggleExpand(card, newText) {
+      const cards = document.querySelectorAll('.card');
+      const content = card.querySelector('.content');
 
+      if (card.classList.contains('expanded')) {
+        card.classList.remove('expanded');
+        content.classList.add('fade-out');
+        setTimeout(() => {
+          content.innerHTML = `<h3>${card.querySelector('h3').innerText}</h3><p>${card.dataset.originalText}</p>`;
+          content.classList.remove('fade-out');
+        }, 400);
+        cards.forEach(c => c.classList.remove('expanded', 'hidden'));
+        expandedCard = null;
+      } else {
+        cards.forEach(c => {
+          if (c !== card) {
+            c.classList.add('hidden');
+          } else {
+            c.classList.add('expanded');
+            const cContent = c.querySelector('.content');
+            cContent.classList.add('fade-out');
+            setTimeout(() => {
+              cContent.innerHTML = '<h2>' + newText + '</h2><p>Más detalles y opciones aquí.</p>';
+              cContent.classList.remove('fade-out');
+            }, 400);
+          }
+        });
+        expandedCard = card;
+      }
+    }
+
+    // Guardar el texto original para restaurarlo luego
+    window.onload = () => {
+      document.querySelectorAll('.card').forEach(card => {
+        const p = card.querySelector('p');
+        card.dataset.originalText = p ? p.innerText : "";
+      });
+    };
+  </script>
+</section>
  <section>
   <footer class="Piedepagina">
     <div class="grupo1">
