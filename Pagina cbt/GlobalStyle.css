@@ -1,0 +1,341 @@
+    :root {
+      --primario: #121768;
+      --secundario: #3da772;
+      --terciario: #2e6f47;
+      --fondo: #bebebe;
+      --bacground2:rgb(81, 102, 221);
+      --background3:rgb(29, 145, 0);
+      --background_color: rgb(135, 152, 155);
+      --white:rgb(250,250,250);
+      --blue:rgb(29, 34, 105);
+      --aquamarine:rgb(24, 141, 83);
+      --gold:rgb(139, 137, 16);
+      --green:rgb(29, 95, 23);
+      --blue_grey: rgba(97, 92, 158, 0.836);
+      --blue_grey2: rgba(70, 65, 128, 0.836);
+      --blue_grey3:rgba(51, 46, 97, 0.836);
+    }
+    *{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: var(--background_color);
+      font-family: "Raleway", sans-serif;
+    }
+
+    h1 {
+      color: white;
+      font-family: "Ancizar Serif", serif; 
+      font-size: 2rem;
+      margin-left: 10px;
+      text-shadow: 0 1px #b7b7b7, 0 2px 
+     #b7b7b7, 0 3px #b7b7b7, 0 4px #b7b7b7, 0 5px #b7b7b7, 0 6px transparent, 0 7px transparent,
+     0 8px transparent, 0 9px transparent, 0 10px 10px rgba(0,0,0.5)
+    }
+
+    a{
+     text-decoration: none;
+    }
+
+    span{
+     position: relative;
+     top: 20px;
+     display: inline-block;
+     font-size: 8rem;
+     text-shadow: 0 1px #b7b7b7, 0 2px 
+     #b7b7b7, 0 3px #b7b7b7, 0 4px #b7b7b7, 0 5px #b7b7b7, 0 6px transparent, 0 7px transparent,
+     0 8px transparent, 0 9px transparent, 0 10px 10px rgba(0,0,0.5);
+     animation: bounce 2s ease infinite alternate;
+    }
+
+    h1 span:nth-child(2){
+     animation-delay: 0.1s;
+    }
+
+    h1 span:nth-child(3){
+     animation-delay: 0.2s;
+    }
+
+    h1 span:nth-child(4){
+     animation-delay: 0.3s;
+    }
+
+    h1 span:nth-child(5){
+     animation-delay: 0.4s;
+    }
+
+    h1 span:nth-child(6){
+     animation-delay: 0.5s;
+    }
+
+    h1 span:nth-child(7){
+     animation-delay: 0.6s;
+    }
+
+    h1 span:nth-child(8){
+     animation-delay: 0.7s;
+    }
+
+    h1 span:nth-child(9){
+     animation-delay: 0.8s;
+    }
+
+    h1 span:nth-child(10){
+     animation-delay: 0.9s;
+    }
+
+    h1 span:nth-child(11){
+     animation-delay: 1s;
+    }
+
+
+    @keyframes bounce{
+     100%{
+        top: -20px;
+        text-shadow: 0 1px #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc,
+        0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc 0 60px 30px rgba(0,0,0,0.3);
+      }
+    }
+
+    .menu{
+     background: linear-gradient(to right, #121668ad,#3da772ad);
+     width: 500 px;
+     height: 50px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: self-start;
+     display: flex; 
+     align-items: center;
+    }
+
+    .Piedepagina{
+     width: 100%;
+     background: linear-gradient(to right, #14006b94, #00526b94);
+    }
+
+    .Piedepagina .grupo1{
+     width: 100%;
+     max-width: 1200px;
+     margin: auto;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-gap: 50px;
+     padding: 45px 0px;
+    }
+
+    .Piedepagina .grupo1 .box figure{
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+
+    .Piedepagina .grupo1 .box figure img{
+     width: 250px;
+     height: 250px;
+    }
+
+    .Piedepagina .grupo1 .box h2{
+     color: white;
+     margin-bottom: 25px;
+     font-size: 50px;
+     font-family: "Playfair Display", serif;
+    }
+
+    .Piedepagina .grupo1 .redsocial a{
+     display: flex;
+     flex-direction: column;
+     text-decoration: none;
+     width: 45px;
+     height: 45px;
+     line-height: 50px;
+     color: #ffffff;
+     margin-right: 10px;
+     background: linear-gradient(to right, #0f005094, #00354694);
+     text-align: center;
+     justify-content: center;
+     align-items: center;
+     transition: all 300ms ease;
+     cursor: pointer;
+    }
+
+    .Piedepagina .grupo1 .redsocial a:hover{
+     color: #121768;
+    }
+
+    .Piedepagina .grupo2{
+     background: linear-gradient(to right, #170a4e94, #0a2f4e94);
+     padding: 15px 10px;
+     text-align: center;
+     color: white;
+    }
+
+    .Piedepagina .grupo2 small{
+     font-size: 15px;
+    }
+
+    @media screen and (max-width: 800px){
+      .Piedepagina .grupo1{
+     width: 90%;
+     grid-template-columns: repeat(1, 1fr);
+     grid-gap: 30px;
+     padding: 35px 0px;
+    }
+    }
+
+    button {
+      background-color: var(--terciario);
+      color: white;
+      font-size: 1rem;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: var(--secundario);
+      transform: scale(1.05);
+    }
+
+    .boton__sections
+    {
+      background-color: var(--white);
+      display: flex;
+      justify-content: center;
+      padding: 50px 0;
+    }
+
+    .Botones__cards{
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+    }
+
+    .Boton__card-info{
+     max-width: 900px;
+    }
+
+    .Boton__card-info h1{
+     font-size: 2rem;
+     font-weight: 900;
+     color: var(--blue);
+     margin-bottom: 1rem;
+     text-shadow: none;
+     font-family: "Playfair Display", serif;
+    }
+
+    .Boton__card-info p{
+     font-size: 1.1rem;
+     color: black;
+     margin-bottom: 1rem;
+     font-family: "Nunito", sans-serif;
+    }
+
+    .Boton__card-card{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 20px;
+    }
+
+    .Boton__card{
+       max-width: 25%;
+       border: solid 1px var(--aquamarine);
+       margin: 3rem 1rem;
+       padding: 2rem 1rem;
+       border-radius: 5px;
+       background-color: rgba(69, 64, 88, 0.3);
+       transition: .5s, color .10s;
+       -webkit-transition: .5s, color .10s;
+       -moz-transition: .5s, color .10s;
+       cursor: pointer;
+    }
+
+    .Boton__card i{
+     font-size: 56px;
+     color: var(--gold);
+    }
+
+    .Boton__card h2{
+     font-size: 1.5rem;
+     font-weight: 700;
+     color: var(--blue);
+     font-family: "Playfair Display", serif;
+    }
+
+    .Boton__card p{
+     font-size: 1.1rem;
+     color:black;
+     margin-top: 0.5rem;
+     font-family: "Noto Sans", sans-serif;
+    }
+
+    .Boton__card:hover{
+     box-shadow: 0 8px 8px 0 #000000,0 8px 8px 0 #000000;
+     transform: translate(0px,5px);
+     -webkit-transform: translate(0px,5px);
+     -moz-transform:translate(0px,5px);
+
+    }
+
+    .container{
+     max-width: 1440px;
+     padding: 0 20px;
+    }
+
+    @media only screen and (max-width: 850px){
+     .Boton__card-card{
+       flex-direction: column;
+       align-items: center;
+       max-width: 500px;
+      }
+      .Boton__card{
+       max-width: 100%;
+       margin: 1rem;
+      }
+      .Botones__cards .boton_more{
+       margin-top: 2rem;
+
+      }
+    }
+
+    .boton_more{
+     font-size: 1.1rem;
+     font-weight: 700;
+     padding: 10px 20px;
+     border-radius: 5px;
+    }
+
+    .boton_more-primary{
+     color: var(--blue);
+     background-color: var(--gold);
+    }
+
+    .boton_more-primary:hover{
+      background-color: rgb(77, 75, 11);
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .menu {
+        font-size: 24px;
+        display:inline;
+      }
+
+      button {
+        width: 90%;
+        margin: 10px auto;
+      }
+    }
