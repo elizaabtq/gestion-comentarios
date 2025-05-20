@@ -3,18 +3,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <style>
     :root {
       --primario: #121768;
       --secundario: #3da772;
       --terciario: #96a12c;
       --fondo: #bebebe;
+      --bg: #004696;
+      --clr-1: #00c2ff;
+      --clr-2: #33ff8c;
+      --clr-3: #5340ff;
+      --clr-4: #4cb7ff;
+
+      --blur: 1rem;
+      --fs: clamp(3rem, 8vw, 7rem);
+      --ls: clamp(-1.75px, -0.25vw, -3.5px);
     }
 
     body {
       margin: 0;
       background-color: var(--fondo);
       font-family: 'Inter', sans-serif;
+      height: 100vh;
     }
 
     .menu{
@@ -39,6 +52,59 @@
       cursor: pointer;
       transition: background 0.3s ease, transform 0.2s ease;
     }
+
+    *, *::before, *::after{
+			box-sizing: border-box;
+		}
+		.rainbow{
+			position: relative;
+			z-index: 0;
+			width: 400px;
+			height: 300px;
+			border-radius: 10px;
+			overflow: hidden;
+			padding: 2rem;
+		}
+		.rainbow::before{
+			content: '';
+			position: absolute;
+			z-index: -2;
+			left: -50%;
+			top: -50%;
+			width: 200%;
+			height: 200%;
+			background-color: #399953;
+			background-repeat: no-repeat;
+			background-size: 50% 50%, 50% 50%;
+			background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+			background-image: linear-gradient(#399953, #399953), linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33), linear-gradient(#377af5, #377af5);
+			-webkit-animation: rotate 4s linear infinite;
+			animation: rotate 4s linear infinite;
+		}
+		.rainbow::after{
+			content: '';
+			position: absolute;
+			z-index: -1;
+			left: 6px;
+			top: 6px;
+			width: calc(100% - 12px);
+			height: calc(100% - 12px);
+			background-color: #fff;
+			border-radius: 6px;
+		}
+
+		@-webkit-keyframes rotate{
+			100%{
+				-webkit-transform: rotate(1turn);
+				transform: rotate(1turn);
+			}
+		}
+		@keyframes rotate{
+			100%{
+				-webkit-transform: rotate(1turn);
+				transform: rotate(1turn);
+			}
+		}
 
     button:hover {
       background-color: var(--secundario);
@@ -87,6 +153,8 @@
       transform-origin: left;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       padding: 20px;
+      margin: 0;
+      box-sizing: border-box;
       opacity: 0;
       transition: transform 1.2s ease, opacity 1s ease;
       pointer-events: none;
@@ -171,6 +239,192 @@
         display: block;
       }
     }
+    *,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: var(--fs);
+  font-weight: 800;
+  letter-spacing: var(--ls);
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+}
+
+.aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  mix-blend-mode: darken;
+  pointer-events: none;
+}
+
+.aurora__item {
+  overflow: hidden;
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  background-color: var(--clr-1);
+  border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  filter: blur(var(--blur));
+  mix-blend-mode: overlay;
+}
+
+.aurora__item:nth-of-type(1) {
+  top: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-1 12s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(2) {
+  background-color: var(--clr-3);
+  right: 0;
+  top: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-2 12s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(3) {
+  background-color: var(--clr-2);
+  left: 0;
+  bottom: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-3 8s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(4) {
+  background-color: var(--clr-4);
+  right: 0;
+  bottom: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-4 24s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-1 {
+  0% {
+    top: 0;
+    right: 0;
+  }
+
+  50% {
+    top: 100%;
+    right: 75%;
+  }
+
+  75% {
+    top: 100%;
+    right: 25%;
+  }
+
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+
+@keyframes aurora-2 {
+  0% {
+    top: -50%;
+    left: 0%;
+  }
+
+  60% {
+    top: 100%;
+    left: 75%;
+  }
+
+  85% {
+    top: 100%;
+    left: 25%;
+  }
+
+  100% {
+    top: -50%;
+    left: 0%;
+  }
+}
+
+@keyframes aurora-3 {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+
+  40% {
+    bottom: 100%;
+    left: 75%;
+  }
+
+  65% {
+    bottom: 40%;
+    left: 50%;
+  }
+
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@keyframes aurora-4 {
+  0% {
+    bottom: -50%;
+    right: 0;
+  }
+
+  50% {
+    bottom: 0%;
+    right: 40%;
+  }
+
+  90% {
+    bottom: 50%;
+    right: 25%;
+  }
+
+  100% {
+    bottom: -50%;
+    right: 0;
+  }
+}
+
+@keyframes aurora-border {
+  0% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+
+  25% {
+    border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+  }
+
+  50% {
+    border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+  }
+
+  75% {
+    border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+  }
+
+  100% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+}
   </style>
   <title>Revista</title>
 </head>
@@ -222,7 +476,19 @@
   </div>
 
   <div class="libro">
-    <div class="pagina actual" id="Portada">Portada</div>
+    <div class="pagina actual" id="Portada" style="background: linear-gradient(var(--bg), #007213);" class="rainbow">
+      <div class="content" >
+  <h1 class="title">D' Veritas Capistrán
+    <div class="aurora">
+      <div class="aurora__item"></div>
+      <div class="aurora__item"></div>
+      <div class="aurora__item"></div>
+      <div class="aurora__item"></div>
+    </div>
+  </h1>
+  <p class="subtitle">Un arcoiris de conocimientos.</p>
+</div>
+    </div>
     <div class="pagina" id="indice">
     <h2>Indice</h2>
     <ul>
@@ -245,7 +511,32 @@
       </li>
     </ul>
     </div>
-    <div class="pagina" id="pagina2">P2</div>
+    <div class="pagina" id="pagina2">
+      <h3 style="text-align: center;">HUMUS DE LOMBRIZ BIOREGENERACIÓN DEL SUELO</h3>
+      <p style="text-align: justify;">
+        En la agricultura contemporánea, la prevalencia del uso de fertilizantes químicos por
+        parte de productores privados y civiles plantea serias preocupaciones debido a sus
+        efectos deletéreos, ampliamente documentados, tanto en la salud humana, a través de
+        la ingesta directa o indirecta mediante productos de origen animal, como en la
+        integridad de los ecosistemas. Sin embargo, es crucial destacar la existencia de
+        alternativas sustentables que prometen rendimientos agrícolas equiparables, al tiempo
+        que minimizan la huella ecológica. Entre estas, el "lombricompostaje" se erige como
+        una metodología de alta eficiencia integral, considerando tanto la sostenibilidad de su
+        producción como la calidad de los resultados obtenidos en la fertilización de suelos.
+        Este proceso biológico aprovecha la sinergia entre un sustrato de tierra fértil, la
+        biotransformación de residuos orgánicos de origen urbano y la actividad metabólica de
+        la especie de lombriz roja californiana Eisenia foetida. En este contexto, una
+        investigación se enfocará en elucidar la trascendencia del "lombricompostaje" en el
+        ámbito agrícola, detallando sus múltiples beneficios agronómicos y ambientales,
+        describiendo la metodología para su implementación y presentando los resultados
+        derivados de la aplicación de esta técnica en un proyecto específico.
+      </p>
+      <a href="https://drive.google.com/file/d/13_QJt0nrp9z0Ak77pajZErQEnja-Wrpy/view?usp=sharing" style="text-decoration: none;">
+        <p>
+          Lee más sobre el tema presionando aquí
+        </p>
+      </a>
+    </div>
     <div class="pagina" id="pagina3">p3</div>
   </div>
 
